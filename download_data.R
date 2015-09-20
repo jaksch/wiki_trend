@@ -2,7 +2,7 @@ library('stringr')
 
 url1 <- 'http://dumps.wikimedia.org/other/pagecounts-raw/2015/2015-09/'
 
-start_date <- '2015-09-10'
+start_date <- '2015-09-13'
 end_date <- '2015-09-18'
 
 day1 <- str_extract(start_date, '[0-9]{2}$')
@@ -25,8 +25,8 @@ for (i in 1:length(days)) {
     download.file(url = paste0(url1, temp_file), destfile = temp_file)
   }
 }
-setwd('~/R/wiki_trend')
 
 
-file <- 'pagecounts-20150901-000000.gz'
+# setwd('~/R/wiki_trend')
 
+## end
