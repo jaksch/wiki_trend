@@ -4,11 +4,13 @@ library('stringr')
 library('dplyr')
 options(dplyr.width = Inf)
 
-
+# setwd('C:/R/wiki_trend')
 getwd()
 setwd('./data')
 
 files <- list.files()
+
+## include mobil events with no.m and en.m
 
 t <- now()
 data_out <- data_frame()
@@ -54,3 +56,31 @@ setwd('C:/R/wiki_trend/etl_data')
 save(data_out, file = '2015-09-10_2015-09-12_compressed.RData')
 
 ## end
+
+
+# head(data)
+# no_data <- filter(data, language == 'no', count >= 10) %>% arrange(desc(count))
+# no_data2 <- no_data %>% 
+#   select(-size)
+# head(no_data2)
+# nrow(no_data2)
+# 
+# lan <- unique(data$language)
+# lan[str_detect(lan, 'no.?')]
+# 
+# 
+# 
+# 
+# no_m_data <- filter(data, language == 'no.m', count >= 10) %>% arrange(desc(count))
+# no_m_data2 <- no_m_data %>% 
+#   select(-size)
+# head(no_m_data2)
+# nrow(no_data2)
+
+
+
+
+
+
+
+

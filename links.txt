@@ -1,0 +1,7 @@
+Links
+
+## wiki site about the data
+http://dumps.wikimedia.org/other/pagecounts-all-sites/2015/
+
+## download path for hourly files
+https://wikitech.wikimedia.org/wiki/Analytics/Data/Pagecounts-all-sites
