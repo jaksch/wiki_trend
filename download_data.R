@@ -3,8 +3,8 @@ library('stringr')
 ## pagecounts-all-sites (wih both desktop and mobil events)
 url1 <- 'http://dumps.wikimedia.org/other/pagecounts-all-sites/2015/2015-09/'
 
-start_date <- '2015-09-10'
-end_date <- '2015-09-12'
+start_date <- '2015-09-13'
+end_date <- '2015-09-20'
 
 day1 <- str_extract(start_date, '[0-9]{2}$')
 day2 <- str_extract(end_date, '[0-9]{2}$')

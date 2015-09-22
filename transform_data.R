@@ -24,12 +24,12 @@ for (i in 1:length(files)) {
   hour <- str_extract(file, '[0-9]{6}[.]gz') %>% str_extract(., '^.{2}')
   
   ## find norwegian events
-  no_data <- filter(data, language == 'no', count >= 10) %>% arrange(desc(count))
+  no_data <- filter(data, language == 'no' | language == 'no.m', count >= 10)
   no_data2 <- no_data %>% 
     select(-size)
   
   ## find english events
-  en_data <- filter(data, language == 'en', count >= 100) %>% arrange(desc(count))
+  en_data <- filter(data, language == 'en'| language == 'en.m', count >= 100)
   en_data2 <- en_data %>% 
     select(-size)
   
@@ -59,28 +59,28 @@ save(data_out, file = '2015-09-10_2015-09-12_compressed.RData')
 
 
 # head(data)
-# no_data <- filter(data, language == 'no', count >= 10) %>% arrange(desc(count))
+# no_data <- filter(data, language == 'no', count >= 10)
+# head(no_data)
 # no_data2 <- no_data %>% 
-#   select(-size)
+#   select(-size) %>% 
+#   mutate(platform = 'desktop')
 # head(no_data2)
 # nrow(no_data2)
 # 
+# no_data3 <- filter(data, language == 'no.m', count >= 10)
+# head(no_data3)
+# no_data4 <- no_data3 %>% 
+#   select(-size) %>% 
+#   mutate(platform = 'mobil')
+# head(no_data4)
+# nrow(no_data4)
+# 
+# 
 # lan <- unique(data$language)
 # lan[str_detect(lan, 'no.?')]
-# 
-# 
-# 
 # 
 # no_m_data <- filter(data, language == 'no.m', count >= 10) %>% arrange(desc(count))
 # no_m_data2 <- no_m_data %>% 
 #   select(-size)
 # head(no_m_data2)
 # nrow(no_data2)
-
-
-
-
-
-
-
-
