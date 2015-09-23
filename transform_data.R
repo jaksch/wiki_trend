@@ -4,7 +4,7 @@ library('stringr')
 library('dplyr')
 options(dplyr.width = Inf)
 
-# setwd('C:/R/wiki_trend')
+setwd('C:/R/wiki_trend')
 getwd()
 setwd('./data')
 
@@ -13,7 +13,7 @@ files <- list.files()
 ## include mobil events with no.m and en.m
 
 t <- now()
-data_out <- data_frame()
+# data_out <- data_frame()
 for (i in 1:length(files)) {
   file <- files[i]
   data <- read_delim(file, delim = ' ', col_names = FALSE)
@@ -52,8 +52,7 @@ head(data_out)
 nrow(data_out)
 
 setwd('C:/R/wiki_trend/etl_data')
-
-save(data_out, file = '2015-09-10_2015-09-12_compressed.RData')
+save(data_out, file = '2015-09-10_2015-09-20_compressed.RData')
 
 ## end
 
